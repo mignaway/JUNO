@@ -1,0 +1,36 @@
+#playerContainer {
+	-fx-background-color: rgba(0,0,0,.4);
+	-fx-background-radius: 10px;
+}
+#logoutButton {
+	-fx-background-color: rgba(223, 49, 49,.5);
+}
+#logoutButton:hover {
+	-fx-background-color: rgba(223, 49, 49,1);
+}
+#editprofileButton {
+	-fx-background-color: rgb(49,98,223);
+}
+#editprofileButton:hover {
+	-fx-background-color: rgb(27,67,172);
+}
+#startGameButton {
+	-fx-background-color: rgb(49,98,223);
+}
+#startGameButton:hover {
+	-fx-opacity: .7;
+}
+#playerPointExperienceBar .bar {
+	-fx-background-insets: 0;
+}
+#playerPointExperienceBar > .track {
+	-fx-background-color: rgba(255,255,255,.2)
+}
+#navbarPlay,#navbarProfile,#navbarRules {
+	-fx-font-weight: bold;
+	-fx-font-family: Arial;
+	-fx-font-size: 16px;
+}
+#navbarPlay:hover,#navbarProfile:hover,#navbarRules:hover {
+	-fx-opacity: 1; 
+}

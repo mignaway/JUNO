@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+   <children>
+      <ImageView fitHeight="850.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/game/background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lastCardThrowed" fitHeight="150.0" fitWidth="200.0" layoutX="592.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/cards/back.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cardDrawImage" fitHeight="161.0" fitWidth="112.0" layoutX="157.0" layoutY="58.0" onMouseClicked="#drawCardAction" pickOnBounds="true" preserveRatio="true" rotate="-34.7">
+         <image>
+            <Image url="@../assets/game/card_stack_draw.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="exitGameButton" alignment="CENTER" layoutX="1162.0" layoutY="22.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="39.0" prefWidth="96.0" style="-fx-background-radius: 10; -fx-background-color: #DF3131; -fx-font-weight: bold; -fx-font-size: 18;" text="QUIT" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox fx:id="secondPlayerInfo" alignment="CENTER" layoutX="161.0" layoutY="366.0" prefHeight="118.0" prefWidth="130.0" visible="false">
+         <children>
+            <ImageView fx:id="secondPlayerAvatar" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/default_avatar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="secondPlayerNickname" alignment="CENTER" prefHeight="38.0" prefWidth="217.0" text="Player1" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox fx:id="thirdPlayerInfo" alignment="CENTER" layoutX="532.0" layoutY="145.0" prefHeight="118.0" prefWidth="216.0" visible="false">
+         <children>
+            <ImageView fx:id="thirdPlayerAvatar" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/default_avatar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="thirdPlayerNickname" alignment="CENTER" prefHeight="38.0" prefWidth="124.0" text="Player1" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox fx:id="fourthPlayerInfo" alignment="CENTER" layoutX="1025.0" layoutY="366.0" prefHeight="118.0" prefWidth="130.0" visible="false">
+         <children>
+            <ImageView fx:id="fourthPlayerAvatar" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/default_avatar.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="fourthPlayerNickname" alignment="CENTER" prefHeight="38.0" prefWidth="217.0" text="Player1" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox fx:id="playerCardBox" alignment="CENTER" depthTest="DISABLE" layoutX="-7.0" layoutY="675.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="188.0" prefWidth="1295.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="thirdCardBox" alignment="CENTER" depthTest="DISABLE" layoutX="302.0" layoutY="-27.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="706.0" visible="false">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox fx:id="secondCardBox" alignment="CENTER" depthTest="DISABLE" layoutX="-314.0" layoutY="353.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="706.0" rotate="90.0" visible="false">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="fourthCardBox" alignment="CENTER" depthTest="DISABLE" layoutX="881.0" layoutY="353.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="144.0" prefWidth="706.0" rotate="-90.0" visible="false">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="40.0" />
+         </padding>
+      </HBox>
+      <VBox fx:id="firstPlayerInfo" alignment="CENTER" layoutX="590.0" layoutY="558.0" prefHeight="92.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="firstPlayerAvatar" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/default_avatar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <ImageView fx:id="skipPlayerButton" fitHeight="104.0" fitWidth="152.0" layoutX="409.0" layoutY="560.0" onMouseClicked="#manualSkipTurn" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/game/skip_button.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="unoPlayerButton" fitHeight="104.0" fitWidth="152.0" layoutX="717.0" layoutY="560.0" onMouseClicked="#handleUnoButtonClick" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/game/uno_button.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Pane fx:id="colorChooserPane" disable="true" prefHeight="850.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,.85);" visible="false">
+         <children>
+            <VBox alignment="CENTER" layoutY="350.0" prefHeight="109.0" prefWidth="1280.0">
+               <children>
+                  <Label alignment="CENTER" text="Choose a color:" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1295.0" spacing="50.0">
+                     <children>
+                        <Circle fx:id="choosecolor_red" radius="50.0" stroke="#df3131" strokeType="INSIDE" strokeWidth="2.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.8705882430076599" green="0.20000000298023224" blue="0.20000000298023224" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.3552631437778473" green="0.021381579339504242" blue="0.021381579339504242" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Circle>
+                        <Circle fx:id="choosecolor_blue" radius="50.0" stroke="#3162df80" strokeType="INSIDE" strokeWidth="2.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.1921568661928177" green="0.3843137323856354" blue="0.8705882430076599" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color green="0.08947368711233139" blue="0.31578946113586426" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Circle>
+                        <Circle fx:id="choosecolor_green" radius="50.0" stroke="#3dc25280" strokeType="INSIDE" strokeWidth="2.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.24320000410079956" green="0.7599999904632568" blue="0.32071998715400696" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.037097953259944916" green="0.2763157784938812" blue="0.07298062741756439" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Circle>
+                        <Circle fx:id="choosecolor_yellow" radius="50.0" stroke="#f9db2780" strokeType="INSIDE" strokeWidth="2.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.9686274528503418" green="0.8470588326454163" blue="0.1568627506494522" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.4868420958518982" green="0.42192983627319336" blue="0.05409356579184532" opacity="0.699999988079071" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Circle>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <ImageView fx:id="reverseLeftArrow" fitHeight="150.0" fitWidth="200.0" layoutX="511.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/game/reverse_left_arrow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="reverseRightArrow" fitHeight="150.0" fitWidth="200.0" layoutX="727.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/game/reverse_right_arrow.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="gameOverPane" prefHeight="850.0" prefWidth="1280.0" style="-fx-background-color: rgba(0,0,0,0.9);" visible="false">
+         <children>
+            <VBox layoutX="287.0" layoutY="243.0" prefHeight="364.0" prefWidth="706.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="128.0" prefWidth="706.0">
+                     <children>
+                        <Label text="YOU" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="71.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="gameOverResultLabel" text="WON" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="71.0" />
+                           </font>
+                        </Label>
+                        <Label text="!" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="71.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="130.0" prefWidth="706.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="706.0">
+                           <children>
+                              <Label text="Winner:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="gameOverWinnerLabel" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="706.0">
+                           <children>
+                              <Label text="Exp. gained:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="gameOverExperienceLabel" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="706.0">
+                           <children>
+                              <Label text="Current Level:" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="gameOverCurrentLevelLabel" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="103.0" prefWidth="706.0">
+                     <children>
+                        <Button fx:id="gameOverReturnButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitGame" prefHeight="39.0" prefWidth="267.0" style="-fx-background-radius: 10; -fx-background-color: #66CF77; -fx-font-weight: bold;" text="Go To Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
