@@ -1,9 +1,12 @@
 module JunoProject {
-	requires javafx.controls;
-	requires javafx.graphics;
-	requires javafx.fxml;
-	requires javafx.base;
+	exports cards;
+	exports application;
+	exports audio;
+	exports user;
+
 	requires java.desktop;
-	
-	opens application to javafx.graphics, javafx.fxml;
+	requires javafx.base;
+	requires javafx.controls;
+	requires javafx.fxml;
+	requires javafx.graphics;
 }
