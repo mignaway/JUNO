@@ -341,7 +341,6 @@ public class Game {
 		            e.printStackTrace();
 		        }
 		        Platform.runLater(()->{
-		        	//skipTurn();
 		        	checkCycleForBot();
 		        });   
 		    }

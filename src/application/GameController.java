@@ -363,7 +363,6 @@ public class GameController {
 	public void updateLastCardVisual(Card generatedCard) {
 		gameAudioEffect.playAudio("audio/draw_card_sound.wav", false, 0.5);
 		lastCardThrowed.setImage(new Image(getClass().getResource("/cards/" + UnoCards.getCardFile(generatedCard) + ".png").toString()));
-		System.out.println("update visual called here!");
 	}
 	
 	/**
