@@ -1,2 +1,2 @@
-migna,migna_avatar.png,29,25,5,7
+migna,migna_avatar.png,30,26,5,27
 mocanu,mocanu_avatar.png,3,3,3,0

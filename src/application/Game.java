@@ -135,8 +135,6 @@ public class Game {
 		gameController.updateVisualOpacityOtherHands(playersInGame.get(0));
 		// game ready
 		gameStarted = true;
-		// to delete
-		stopGame(sessionPlayer);
 	}
 	
 	/**

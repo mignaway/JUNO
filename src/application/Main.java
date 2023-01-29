@@ -36,7 +36,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
 		Scene login = new Scene(root,Color.BLACK);
 		
-		Image logo = new Image("logo.png");
+		Image logo = new Image("juno-logo.png");
 		
 		stage.getIcons().add(logo);
 		stage.setTitle("Uno Game");
