@@ -7,6 +7,8 @@
 
 The JUNO project was developed as part of a University course in ___Metodologie di Programmazione___ at Sapienza of Rome. It is written in Java and utilizes the JavaFX framework to create a visually appealing interface.<br><br>Despite being one of my earliest projects with Java, I have applied design patterns and Java class implementation to create a functional and decent product. The JavaFX framework offers ample resources for interface design, though it can be challenging to manage at times.<br><br>The end result of this project is a based on of the original UNO game.
 
+> **Warning** : it is prohibited to redistribute this project or copy its contents for academic reuse!
+
 ## Features
 - Quality and Clean Design
 - Functionality and Simplicity
